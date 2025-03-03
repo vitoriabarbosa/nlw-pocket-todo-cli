@@ -20,15 +20,15 @@ const listarMeta = async() => {
     choices: [...metas],
     instructions: false 
   });
+  
+  metas.forEach((m) => {
+    m.checked = false;
+  });
 
   if(resposta.length == 0) {
     console.log("Nenhuma meta selecionada!");
     return;
   };
-
-  metas.forEach((m) => {
-    m.checked = false;
-  });
 
   resposta.forEach((resposta) => {
     const meta = metas.find((m) => {
